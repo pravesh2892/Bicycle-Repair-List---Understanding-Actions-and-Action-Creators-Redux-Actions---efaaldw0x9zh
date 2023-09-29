@@ -1,45 +1,65 @@
-// In your actions.js file
-export const repairAdded = (owner, model, description) => ({
-  type: 'repairAdded',
-  payload: {
-    id: Date.now(), // Generate a unique ID (you can use a library for this)
-    owner,
-    model,
-    description,
-    resolved: false, // Set resolved to false by default
-  },
-});
+/*
+Here all the actions are defined.
+Example of defining an actoin is as follows
 
-export const repairRemoved = (id) => ({
-  type: 'repairRemoved',
-  payload: {
-    id,
-  },
-});
+export const repairAdded = (var1,va2) => {
+  return {
+    type: "actionType1",
+    payload: {
+      var1,
+      var2
+    }
+  }
+}
 
-export const repairResolved = (id) => ({
-  type: 'repairResolved',
-  payload: {
-    id,
-  },
-});
+*/
 
-export const repairUpdated = (id, owner, model, description) => ({
-  type: 'repairUpdated',
-  payload: {
-    id,
-    owner,
-    model,
-    description,
-  },
-});
+export const repairAdded = ({ owner, model, description }) => {
+  return {
+    type: "repairAdded",
+    payload: {
+      owner,
+      model,
+      description,
+    },
+  };
+};
 
-export const editTask = (id, owner, model, description) => ({
-  type: 'editTask',
-  payload: {
-    id,
-    owner,
-    model,
-    description,
-  },
-});
+export const repairRemoved = (id) => {
+  return {
+    type: "repairRemoved",
+    payload: {
+      id,
+    },
+  };
+};
+export const repairResolved = (id) => {
+  return {
+    type: "repairResolved",
+    payload: {
+      id,
+    },
+  };
+};
+export const repairUpdate = ({ id, owner, model, description }) => {
+  return {
+    type: "repairUpdate",
+    payload: {
+      id,
+      owner,
+      model,
+      description,
+    },
+  };
+};
+export const editTask = ({ id, owner, model, description }) => {
+  return {
+    type: "editTask",
+    payload: {
+      id,
+      owner,
+      model,
+      description,
+    },
+  };
+};
